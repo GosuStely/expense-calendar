@@ -4,24 +4,24 @@ function App() {
   let categories = [
     {
       category: "University",
-      image: "https://cdn-icons-png.flaticon.com/512/124/124051.png",
+      image: "../public/university.png",
       location: "university",
     },
     {
       category: "Apartament",
-      image: "https://cdn-icons-png.flaticon.com/512/124/124051.png",
+      image: "../public/apartament.png",
       location: "apartament",
 
     },
     {
       category: "Gym",
-      image: "https://cdn-icons-png.flaticon.com/512/124/124051.png",
+      image: "../public/gym.png",
       location: "gym",
 
     },
     {
       category: "Weekly Food",
-      image: "https://cdn-icons-png.flaticon.com/512/124/124051.png",
+      image: "../public/food.png",
       location: "food",
 
     }
@@ -32,7 +32,7 @@ function App() {
   return (
     <div className="bg-slate-100 h-screen flex-col justify-center place-items-center text-center">
       <h1>Choose which expense you want to see</h1>
-      <section className="flex flex-row justify-center place-items-center h-1/2 gap-10">
+      <section className="grid grid-cols-2 justify-center place-items-center h-1/2 gap-4">
         {categoryTagArray}
       </section>
     </div >
