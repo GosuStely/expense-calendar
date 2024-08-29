@@ -5,7 +5,7 @@ export default function UniversityFee({ date, fee }) {
     return (
         <div className={`flex flex-col justify-center place-items-center border-2 m-4 rounded-lg h-3/4 ${theme}`}>
             <h2>{date}</h2>
-            <h3 className="text-green-800 text-xl">{fee}$</h3>
+            <h3 className="text-2xl">{fee}$</h3>
         </div>
     )
 }
