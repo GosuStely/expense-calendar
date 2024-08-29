@@ -1,7 +1,7 @@
 import Category from "./components/Category"
 
 function App() {
-  let categories = [
+  const categories = [
     {
       category: "University",
       image: "/university.png",
@@ -26,16 +26,16 @@ function App() {
 
     }
   ];
-  let categoryTagArray = categories.map((category, index) =>
+  const categoryTagArray = categories.map((category, index) =>
     <Category key={index} category={category.category} image={category.image} location={category.location} />)
 
   return (
-    <div className="bg-slate-100 h-screen flex-col justify-center place-items-center text-center">
+    <main className="bg-gray-300 h-screen flex-col justify-center place-items-center text-center">
       <h1 className="p-20 text-xl">Choose which expense you want to see</h1>
       <section className="grid grid-cols-2 justify-center place-items-center h-1/2 gap-5">
         {categoryTagArray}
       </section>
-    </div >
+    </main >
   )
 }
 
