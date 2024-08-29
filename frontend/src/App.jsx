@@ -4,24 +4,24 @@ function App() {
   let categories = [
     {
       category: "University",
-      image: "../public/university.png",
+      image: "/university.png",
       location: "university",
     },
     {
       category: "Apartament",
-      image: "../public/apartament.png",
+      image: "/apartament.png",
       location: "apartament",
 
     },
     {
       category: "Gym",
-      image: "../public/gym.png",
+      image: "/gym.png",
       location: "gym",
 
     },
     {
       category: "Weekly Food",
-      image: "../public/food.png",
+      image: "/food.png",
       location: "food",
 
     }
@@ -31,8 +31,8 @@ function App() {
 
   return (
     <div className="bg-slate-100 h-screen flex-col justify-center place-items-center text-center">
-      <h1>Choose which expense you want to see</h1>
-      <section className="grid grid-cols-2 justify-center place-items-center h-1/2 gap-4">
+      <h1 className="p-20 text-xl">Choose which expense you want to see</h1>
+      <section className="grid grid-cols-2 justify-center place-items-center h-1/2 gap-5">
         {categoryTagArray}
       </section>
     </div >
