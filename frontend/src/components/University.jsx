@@ -1,4 +1,5 @@
 import UniversityFee from "./UniversityFee";
+import { useState, useEffect } from "react";
 
 export default function University() {
     const universityCostInfo = [
@@ -45,11 +46,30 @@ export default function University() {
     ]
 
     const universityElementArray = universityCostInfo.map((info, index) =>
-        <UniversityFee key={index} date={info.date} fee={info.fee} />);
+        <UniversityFee key={index} date={info.date} fee={info.fee} />
+    );
 
-    const currentDate = new Date();
-    const paymentsLeft = universityCostInfo.filter((info) => new Date(info.date) > currentDate);
-    const remainingDays = Math.round((new Date(paymentsLeft[0].date) - currentDate) / (1000 * 60 * 60 * 24));
+    const [remainingDays, setRemainingDays] = useState(calculateRemainingDays());
+
+    function calculateRemainingDays() {
+        const currentDate = new Date();
+        const paymentsLeft = universityCostInfo.filter((info) => new Date(info.date) > currentDate);
+
+        if (paymentsLeft.length === 0) {
+            return 0;
+        }
+
+        const nextPaymentDate = new Date(paymentsLeft[0].date);
+        return Math.round((nextPaymentDate - currentDate) / (1000 * 60 * 60 * 24));
+    }
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setRemainingDays(calculateRemainingDays());
+        }, 1000 * 60 * 60 * 24);
+
+        return () => clearInterval(timer);
+    }, []);
 
     return (
         <main className="place-content-center h-screen">

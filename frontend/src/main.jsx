@@ -5,6 +5,7 @@ import './index.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import University from './components/University.jsx'
 import Gym from './components/Gym.jsx'
+import Food from './components/Food.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -13,7 +14,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />} />
         <Route path="/university" element={<University />} />
         <Route path="/gym" element={<Gym />} />
-        <Route path="/" element={<App />} />
+        <Route path="/food" element={<Food />} />
+        <Route path="/apartament" element={<Food />} />
       </Routes>
     </Router>
   </StrictMode>,
