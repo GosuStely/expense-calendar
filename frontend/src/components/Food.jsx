@@ -25,7 +25,7 @@ export default function Food() {
 
     return (
         <div className="h-screen flex justify-center place-items-center">
-            <h1 className="p-5 m-16 text-center bg-cyan-300 rounded-lg">The next payment is on: {nextFriday}</h1>
+            <h1 className="p-5 m-16 text-center bg-cyan-200 rounded-lg">The next payment is on: {nextFriday}</h1>
         </div>
     );
 }
